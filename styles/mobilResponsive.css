@@ -1,0 +1,53 @@
+@media (max-width: 480px ) {
+
+  .intro {
+    font-size: .5rem;
+  }
+
+  .create-account {
+    font-size: 1.5rem;
+  }
+
+  .username-container {
+    flex-direction: column;
+  }
+
+  .username-container .first-input,
+  .username-container .second-input {
+    margin-bottom: 1rem;
+    justify-content: space-between;
+    width: 15rem;
+  }
+  .first-input input,
+  .second-input input {
+    width: 11rem;
+  }
+  
+  .first-input label,
+  .second-input label,
+  .email-container label,
+  .password-container label {
+    font-size: .7rem;
+  }
+  
+  .email-container,
+  .password-container {
+    width: 20rem;
+    margin-bottom: .5rem;
+  }
+  
+  .email-container input,
+  .password-container input {
+    width: 15rem;
+  }
+
+  .sign-in {
+    font-size: .7rem;
+  }
+
+  .create-account-btn {
+    width: 20rem;
+  }
+}
+
+
