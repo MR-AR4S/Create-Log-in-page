@@ -267,3 +267,33 @@ body {
 .mouse-out {
   animation: mouse-out .3s;
 }
+
+.password-security {
+  width: 10rem;
+  height: 0.5rem;
+  border: 1px solid #297cdb;
+  border-radius: 1rem;
+  margin: 1rem .2rem;
+}
+
+@keyframes strong {
+  from {
+    width: 5rem;
+  }
+
+  to {
+    width: 7rem;
+  }
+
+}
+
+.pass-lvl {
+  width: 5rem;
+  background-color: #0f0;
+  height: 0.35rem;
+  border: none;
+  border-radius: 1rem;
+  /* forward : doesn't came back to normal width */
+  animation: strong 1s 1s forwards ; 
+}  
+
