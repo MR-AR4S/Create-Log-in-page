@@ -297,3 +297,15 @@ body {
   animation: strong 1s 1s forwards ; 
 }  
 
+
+
+.error {
+  margin: 1rem;
+  font-size: .8rem;
+  font-weight: bold;
+  color: rgb(189, 26, 26);
+}
+
+.error-message {
+  display: none;
+}

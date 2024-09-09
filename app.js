@@ -59,3 +59,19 @@ passwordContainer.addEventListener("mouseleave", () => {
   passwordContainer.classList.add("mouse-out");
   passwordContainer.classList.remove("mouse-in");
 });
+
+const createAccountBtn = document.querySelector(".create-account-btn");
+
+createAccountBtn.addEventListener("click", () => {
+  const form = document.querySelector("form");
+  const errorMessage = document.querySelector(".error-message");
+
+  if (form.checkValidity()) {
+    form.submit();
+    errorMessage.classList.remove("error");
+    errorMessage.classList.add("error-message");
+  } else {
+    errorMessage.classList.add("error");
+    errorMessage.classList.remove("error-message");
+  }
+});
