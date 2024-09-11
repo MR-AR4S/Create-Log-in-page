@@ -15,50 +15,32 @@ showPassBtn.addEventListener("click", () => {
 });
 
 const firstNameInput = document.querySelector(".first-input");
-firstNameInput.addEventListener("mouseenter", () => {
-  firstNameInput.classList.add("mouse-in");
-  firstNameInput.classList.remove("mouse-out");
-});
-
-firstNameInput.addEventListener("mouseleave", () => {
-  firstNameInput.classList.remove("mouse-in");
-  firstNameInput.classList.add("mouse-out");
-});
-
 const lastNameInput = document.querySelector(".second-input");
-lastNameInput.addEventListener("mouseenter", () => {
-  lastNameInput.classList.add("mouse-in");
-  lastNameInput.classList.remove("mouse-out");
-});
-
-lastNameInput.addEventListener("mouseleave", () => {
-  lastNameInput.classList.remove("mouse-in");
-  lastNameInput.classList.add("mouse-out");
-});
-
 const emailContainer = document.querySelector(".email-container");
-
-emailContainer.addEventListener("mouseenter", () => {
-  emailContainer.classList.add("mouse-in");
-  emailContainer.classList.remove("mouse-out");
-});
-
-emailContainer.addEventListener("mouseleave", () => {
-  emailContainer.classList.add("mouse-out");
-  emailContainer.classList.remove("mouse-in");
-});
-
 const passwordContainer = document.querySelector(".password-container");
 
-passwordContainer.addEventListener("mouseenter", () => {
-  passwordContainer.classList.add("mouse-in");
-  passwordContainer.classList.remove("mouse-out");
-});
+// Attach event listeners to all elements
+firstNameInput.addEventListener("mouseenter", toggleMouseClasses);
+firstNameInput.addEventListener("mouseleave", toggleMouseClasses);
+lastNameInput.addEventListener("mouseenter", toggleMouseClasses);
+lastNameInput.addEventListener("mouseleave", toggleMouseClasses);
+emailContainer.addEventListener("mouseenter", toggleMouseClasses);
+emailContainer.addEventListener("mouseleave", toggleMouseClasses);
+password.addEventListener("mouseenter", toggleMouseClasses);
+password.addEventListener("mouseleave", toggleMouseClasses);
 
-passwordContainer.addEventListener("mouseleave", () => {
-  passwordContainer.classList.add("mouse-out");
-  passwordContainer.classList.remove("mouse-in");
-});
+// Function to handle class toggling
+function toggleMouseClasses(event) {
+  const input = event.target; // Get the element that triggered the event
+
+  if (event.type === "mouseenter") {
+    input.classList.add("mouse-in");
+    input.classList.remove("mouse-out");
+  } else if (event.type === "mouseleave") {
+    input.classList.remove("mouse-in");
+    input.classList.add("mouse-out");
+  }
+}
 
 const createAccountBtn = document.querySelector(".create-account-btn");
 
@@ -75,3 +57,10 @@ createAccountBtn.addEventListener("click", () => {
     errorMessage.classList.remove("error-message");
   }
 });
+
+const passwordValue = password.value;
+createAccountBtn.addEventListener("click", () => {
+  console.log(passwordValue);
+});
+
+// i have a bug here when click on btn several times
