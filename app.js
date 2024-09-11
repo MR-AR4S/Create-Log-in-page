@@ -19,15 +19,14 @@ const lastNameInput = document.querySelector(".second-input");
 const emailContainer = document.querySelector(".email-container");
 const passwordContainer = document.querySelector(".password-container");
 
-// Attach event listeners to all elements
 firstNameInput.addEventListener("mouseenter", toggleMouseClasses);
 firstNameInput.addEventListener("mouseleave", toggleMouseClasses);
 lastNameInput.addEventListener("mouseenter", toggleMouseClasses);
 lastNameInput.addEventListener("mouseleave", toggleMouseClasses);
 emailContainer.addEventListener("mouseenter", toggleMouseClasses);
 emailContainer.addEventListener("mouseleave", toggleMouseClasses);
-password.addEventListener("mouseenter", toggleMouseClasses);
-password.addEventListener("mouseleave", toggleMouseClasses);
+passwordContainer.addEventListener("mouseenter", toggleMouseClasses);
+passwordContainer.addEventListener("mouseleave", toggleMouseClasses);
 
 // Function to handle class toggling
 function toggleMouseClasses(event) {
@@ -50,17 +49,14 @@ createAccountBtn.addEventListener("click", () => {
 
   if (form.checkValidity()) {
     form.submit();
-    errorMessage.classList.remove("error");
-    errorMessage.classList.add("error-message");
+    if (errorMessage) {
+      errorMessage.classList.remove("error");
+      errorMessage.classList.add("error-message");
+    }
   } else {
-    errorMessage.classList.add("error");
-    errorMessage.classList.remove("error-message");
+    if (errorMessage) {
+      errorMessage.classList.add("error");
+      errorMessage.classList.remove("error-message");
+    }
   }
 });
-
-const passwordValue = password.value;
-createAccountBtn.addEventListener("click", () => {
-  console.log(passwordValue);
-});
-
-// i have a bug here when click on btn several times
