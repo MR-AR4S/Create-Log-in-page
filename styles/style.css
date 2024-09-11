@@ -304,6 +304,11 @@ body {
   font-size: .8rem;
   font-weight: bold;
   color: rgb(189, 26, 26);
+  background-color: #e68282;
+  width: 15rem;
+  padding: 1rem;
+  text-wrap: nowrap;
+  border-radius: 1rem;
 }
 
 .error-message {
